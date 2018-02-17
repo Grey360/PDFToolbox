@@ -85,6 +85,7 @@ public class Controller implements Initializable {
     private boolean onZoom = false;
     private String path = System.getProperty("user.dir");
     private String currentPdfPath;
+    private String destinationFolder = "\\src\\main\\resources\\";
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -371,8 +372,7 @@ public class Controller implements Initializable {
 
 
         String
-                folder = "\\res\\",
-                filePath = this.path + folder + file_0.getName().substring(0,file_0.getName().length()-4) + file_1.getName();
+                filePath = this.path + this.destinationFolder + file_0.getName().substring(0,file_0.getName().length()-4) + file_1.getName();
         pdfUtility.setDestinationFileName(filePath);
 
         MemoryUsageSetting setting = MemoryUsageSetting.setupMainMemoryOnly();
